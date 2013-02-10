@@ -105,28 +105,28 @@
       <?php endif; ?>
     </header>
   <?php endif; ?>
-<div class="slideshow">
-<ul>
-  <?php
-	foreach ($node->field_images['und'] as $key => $value)
-	{
-		$imgArray = array(
-		'style_name' => 'diaporama',
-		'path' => $value['uri'],
-		'width' => $value['width'],
-		'height' => $value['height'],
-		'alt' => $value['alt'],
-		'title' => $value['title'],
-//		'attributes' => ,
-		);
-
-	?>
-	<li><a href="<?php print  file_create_url($value['uri']);?>" target="_blank"><?php	print theme_image_style($imgArray);?><p class="caption"></a><?php print $value['title']; ?></p></li>
-	<?php
-	};
-	?>
-	<li><?php	print render($content['body']);  ?></li>
-</ul>
-	<div class="slideshow-nav"><a class="previous"><</a><span class="pager">1</span><a class="next">></a></div>
+<div id="slides">
+    <div class="slides_container">
+      <?php
+        foreach ($node->field_images['und'] as $key => $value)
+        {
+            $imgArray = array(
+            'style_name' => 'diaporama',
+            'path' => $value['uri'],
+            'width' => $value['width'],
+            'height' => $value['height'],
+            'alt' => $value['alt'],
+            'title' => $value['title'],
+    //		'attributes' => ,
+            );
+    
+        ?>
+        <div class="slide"><a href="<?php print  file_create_url($value['uri']);?>" target="_blank"><?php	print theme_image_style($imgArray);?></a><div class="caption"><p><?php print $value['title']; ?></p></div></div>
+        <?php
+        };
+        ?>
+        <div class="slide"><div class="slide-end-content"><?php	print render($content['body']);  ?></div></div>
+    </div>
+    <div class="pager"><a href="#" class="prev"></a><div class="num-page"></div><a href="#" class="next"></a></div>
 </div>
 </article><!-- /.node -->

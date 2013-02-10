@@ -85,6 +85,7 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width">
   <?php endif; ?>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css' />
   <meta http-equiv="cleartype" content="on">
 
   <?php print $styles; ?>

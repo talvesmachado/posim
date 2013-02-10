@@ -79,7 +79,8 @@ stylesheets[all][] = css/main.css
 
 ; Optionally add some JavaScripts to your theme.
 
-;scripts[] = js/script.js
+scripts[] = js/slides.min.jquery.js
+scripts[] = js/script.js
 
 
 
