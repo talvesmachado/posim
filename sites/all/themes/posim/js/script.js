@@ -23,7 +23,7 @@
 
 			$('#slides').slides({
 				preload: true,
-				preloadImage: 'images/loading.gif',
+				preloadImage: Drupal.settings.basePath+'sites/all/themes/posim/images/loading.gif',
 				play: 0,
 				pause: 2500,
 				hoverPause: true,
