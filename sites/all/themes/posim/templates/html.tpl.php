@@ -69,6 +69,26 @@
  * @see zen_preprocess_html()
  * @see template_process()
  */
+$backimage = "";
+ 
+  if($is_front)
+ {
+	$query = "SELECT field_data_field_images.field_images_fid AS images_fid, RAND() AS random_field
+	FROM 
+	{node} node
+	LEFT JOIN {field_data_field_images} field_data_field_images ON node.nid = field_data_field_images.entity_id AND (field_data_field_images.entity_type = 'node' AND field_data_field_images.deleted = '0')
+	WHERE (( (node.status = '1') AND (node.type IN  ('projet')) ))
+	ORDER BY random_field ASC
+	LIMIT 1 OFFSET 0";
+	$result = db_query($query);
+	foreach ($result as $row) 
+	{
+		$myImg = file_load($row->images_fid);
+		$myImg = file_create_url($myImg->uri);
+		dsm($myImg);
+	};
+	$backimage .= 'style=" background: url('.$myImg.');" ';
+ };
 ?><!DOCTYPE html>
 <!--[if IEMobile 7]><html class="iem7" <?php print $html_attributes; ?>><![endif]-->
 <!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7" <?php print $html_attributes; ?>><![endif]-->
@@ -100,7 +120,7 @@
     <![endif]-->
   <?php endif; ?>
 </head>
-<body class="<?php print $classes; ?>" <?php print $attributes;?>>
+<body class="<?php print $classes ?>" <?php print $backimage; ?> <?php print $attributes;?>>
   <?php if ($skip_link_text && $skip_link_anchor): ?>
     <p id="skip-link">
       <a href="#<?php print $skip_link_anchor; ?>" class="element-invisible element-focusable"><?php print $skip_link_text; ?></a>
