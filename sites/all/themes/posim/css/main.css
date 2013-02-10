@@ -33,13 +33,13 @@ ul, li { list-style-type:none; margin:0; padding:0; }
 
 #header { width:700px; margin:0 auto; border-top:1px solid #fff; border-bottom:1px solid #fff; overflow:hidden; height:42px; padding:0; position:relative; overflow:visible; }
 #block-locale-language { position:absolute; top:-25px; right:0; font-size:0.7em; overflow:visible; }
-#block-locale-language ul li, #block-menu-block-1 ul li { display:inline; margin-left:10px; }
-#block-locale-language ul li a, #block-menu-block-1 ul li a  { color:#818181; text-decoration:none; text-transform:uppercase; }
-#region-header a.active, #block-locale-language .active a #block-locale-language a:hover { color:#fff; }
+#block-locale-language ul li { display:inline; margin-left:10px; }
+#block-locale-language ul li a { color:#818181; text-decoration:none; text-transform:uppercase; }
+#region-header a.active, #block-locale-language .active a, #block-locale-language a:hover { color:#fff; }
 
-#block-menu-block-1 .menu { width:700px; font-size:1.1em; },
-#block-menu-block-1 .menu li { display:block; float:left; text-align:left; width:130px; }
-#block-menu-block-1 .menu li a { display:inline-block; text-decoration:none; padding-right:10px; color:#818181; line-height:2.4em; }
+#block-menu-block-1 .menu { width:700px; font-size:1.1em; }
+#block-menu-block-1 .menu li { display:block; float:left; text-align:left; width:150px; }
+#block-menu-block-1 .menu li a { display:inline-block; text-decoration:none; padding-right:10px; color:#818181; line-height:2.4em; text-transform:uppercase; }
 #block-menu-block-1 .menu li a:hover, #block-menu-block-1 .menu li a.active, #block-menu-block-1 .menu li .active-trail { color:#fff; }
 #block-menu-block-1 .menu li li { border:0; font-weight:normal; width:auto; }
 #block-menu-block-1 .menu .n1 { position:absolute; overflow:visible; }
@@ -48,14 +48,14 @@ ul, li { list-style-type:none; margin:0; padding:0; }
 
 #block-menu-block-2 { width:700px; padding:0; margin:0; border-bottom:1px solid #fff; height:auto; overflow:hidden; }
 #block-menu-block-2 .menu { font-size:1.1em; }
-#block-menu-block-2 .menu li {  display:block; float:left; font-size:1.1em; width:140px; }
-#block-menu-block-2 .menu li a { text-decoration:none; display:inline-block; padding-right:10px; color:#818181; line-height:2.3em; color:#818181; }
+#block-menu-block-2 .menu li {  display:block; float:left; font-size:1.1em; width:150px; }
+#block-menu-block-2 .menu li a { text-decoration:none; display:inline-block; padding-right:10px; color:#818181; line-height:2em; color:#818181; font-weight:300; }
 #block-menu-block-2 .menu li a:hover, #navigation .menu li a.active { color:#fff; }
 
 #main { clear:both; padding:0; }
 
 .breadcrumb { font-size:0.9em; padding:10px 0 0 0; }
-.breadcrumb a { text-decoration:none; font-weight:normal; color:#818181;  }
+.breadcrumb li a { text-decoration:none; font-weight:normal; color:#818181;  }
 .breadcrumb a:hover { color:#fff; }
 #page-title { font-size:0.9em; padding-top:2px; font-weight:normal; color:#fff; }
 
@@ -103,15 +103,16 @@ h2 { display:block; border:2px solid #fff; border-width:2px 0; padding:2px 0; wi
 p { text-align:left; font-size:0.9em; margin-bottom:10px; }
 #top-content a { text-decoration:none; }
 
+.section-about table { margin-top:0; font-size:1.1em; }
+.section-about img { float:left; margin-right:10px; }
+.section-about h2 { border:0; font-weight:300; }
+.section-about h3 { font-size:1.2em; font-weight:300; margin-bottom:0; }
+.section-about .item { margin-bottom:30px; }
+.section-about a { color:#818181; }
+.section-about a:hover { color:#fff; }
 
-.main-page { text-align:left; background:#000; padding:20px 10px; font-weight:normal; overflow:hidden; opacity:0.7; }
-.main-page img { float:left; margin-right:10px; }
-.main-page .content { float:left; width:540px; font-weight:300; }
-.main-page .content h2 { border:0; font-weight:300; }
-.main-page .content h3 { font-size:1.2em; font-weight:300; margin-bottom:0; }
-.main-page .content .item { margin-bottom:30px; }
-.main-page .content a { color:#818181; }
-.main-page .content a:hover { color:#fff; }
+.node-type-news .field-name-body{ float:left; background:yellow; }
+.node-type-news .field-name-field-images { float:left; background:pink; }
 
 
 #footer { text-align:right; float:right; }
