@@ -85,7 +85,7 @@ $backimage = "";
 	{
 		$myImg = file_load($row->images_fid);
 		$myImg = file_create_url($myImg->uri);
-		dsm($myImg);
+	//	dsm($myImg);
 	};
 	$backimage .= 'style=" background: url('.$myImg.');" ';
  };
