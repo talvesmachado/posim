@@ -15,71 +15,64 @@
 
 (function ($, Drupal, window, document, undefined) {
 
+$(document).ready(init);
+
+function init()
+{
+	/* Réecriture des langues (switcher) */	
+	$('#block-locale-language').find('a').each(function () {
+		if($(this).text() == "French" || $(this).text() == "Français") 
+		{
+			$(this).text("Fr");
+		};
+		if($(this).text() == "English" || $(this).text() == "Anglais") 
+		{
+			$(this).text("En");
+		};
+	})
+};
 
 
+$(function(){
+	var totaleSlide = $('#slides .slide').size();
 
-		$(function(){
-			var totaleSlide = $('#slides .slide').size();
-
-			$('#slides').slides({
-				preload: true,
-				preloadImage: Drupal.settings.basePath+'sites/all/themes/posim/images/loading.gif',
-				play: 0,
-				pause: 2500,
-				hoverPause: true,
-				generatePagination: false,
-				animationStart: function(current){
-					$('.caption').animate({
-						bottom:-35
-					},100);
-					if (window.console && console.log) {
-						// example return of current slide number
-						//console.log('animationStart on slide: ', current);
-					};
-				},
-				animationComplete: function(current){
-					$('.caption').animate({
-						bottom:0
-					},200);
-					if (window.console && console.log) {
-						// example return of current slide number
-						//console.log('animationComplete on slide: ', current);
-						updatePager( current, totaleSlide );
-					};
-				},
-				slidesLoaded: function() {
-					updatePager( 1, totaleSlide );
-					$('.caption').animate({
-						bottom:0
-					},200);
-				}
-			});
-		});
-
-
-
+	$('#slides').slides({
+		preload: true,
+		preloadImage: Drupal.settings.basePath+'sites/all/themes/posim/images/loading.gif',
+		play: 0,
+		pause: 2500,
+		hoverPause: true,
+		generatePagination: false,
+		animationStart: function(current){
+			$('.caption').animate({
+				bottom:-35
+			},100);
+			if (window.console && console.log) {
+				// example return of current slide number
+				//console.log('animationStart on slide: ', current);
+			};
+		},
+		animationComplete: function(current){
+			$('.caption').animate({
+				bottom:0
+			},200);
+			if (window.console && console.log) {
+				// example return of current slide number
+				//console.log('animationComplete on slide: ', current);
+				updatePager( current, totaleSlide );
+			};
+		},
+		slidesLoaded: function() {
+			updatePager( 1, totaleSlide );
+			$('.caption').animate({
+				bottom:0
+			},200);
+		}
+	});
+});
 function updatePager( current, totaleSlide ) 
 {
 	$('.num-page').html(current+'/'+totaleSlide);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 })(jQuery, Drupal, this, this.document);
