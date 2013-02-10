@@ -1,0 +1,8 @@
+name = texts format
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = wysiwyg
+features[features_api][] = api:1
+features[filter][] = editeur_wysiwyg
+features[wysiwyg][] = editeur_wysiwyg
