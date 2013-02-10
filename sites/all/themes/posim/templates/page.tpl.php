@@ -128,7 +128,7 @@
       <?php print $feed_icons; ?>
     </div><!-- /#content -->
 
-    <div id="navigation">
+    <!--<div id="navigation">
 
       <?php if ($main_menu): ?>
         <nav id="main-menu" role="navigation">
@@ -153,7 +153,7 @@
 
       <?php print render($page['navigation']); ?>
 
-    </div><!-- /#navigation -->
+    </div> --><!-- /#navigation -->
 
     <?php
       // Render the sidebars to see if there's anything in them.
