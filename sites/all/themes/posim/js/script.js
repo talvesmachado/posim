@@ -11,7 +11,6 @@
 // - http://drupal.org/node/1446420
 // - http://www.adequatelygood.com/2010/3/JavaScript-Module-Pattern-In-Depth
 
-
 //http://slidesjs.com/
 
 (function ($, Drupal, window, document, undefined) {
@@ -20,6 +19,8 @@
 
 
 		$(function(){
+			var totaleSlide = $('#slides .slide').size();
+
 			$('#slides').slides({
 				preload: true,
 				preloadImage: 'images/loading.gif',
@@ -33,7 +34,7 @@
 					},100);
 					if (window.console && console.log) {
 						// example return of current slide number
-						console.log('animationStart on slide: ', current);
+						//console.log('animationStart on slide: ', current);
 					};
 				},
 				animationComplete: function(current){
@@ -42,31 +43,25 @@
 					},200);
 					if (window.console && console.log) {
 						// example return of current slide number
-						console.log('animationComplete on slide: ', current);
+						//console.log('animationComplete on slide: ', current);
+						updatePager( current, totaleSlide );
 					};
 				},
 				slidesLoaded: function() {
+					updatePager( 1, totaleSlide );
 					$('.caption').animate({
 						bottom:0
 					},200);
 				}
 			});
-			updatePager();
-			$(".pager a").click(function() {
-				updatePager();
-			});
 		});
 
 
 
-function updatePager() {
-	
-	var totaleSlide =  $('#slides .slide').size();
-	var activeSlide = ($('#slides .slide:visible').index()+2);
-	$('.num-page').html(activeSlide+'/'+totaleSlide);
-
-	
-	}
+function updatePager( current, totaleSlide ) 
+{
+	$('.num-page').html(current+'/'+totaleSlide);
+}
 
 
 
