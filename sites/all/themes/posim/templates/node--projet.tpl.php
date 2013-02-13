@@ -121,7 +121,7 @@
             );
     
         ?>
-        <div class="slide"><a href="<?php print  file_create_url($value['uri']);?>" target="_blank"><?php	print theme_image_style($imgArray);?></a>
+        <div class="slide"><a href="<?php print  file_create_url($value['uri']);?>" class="lightbox_trigger"><?php	print theme_image_style($imgArray);?></a>
         	<?php if($value['title']): ?>
         	<div class="caption"><p><?php print $value['title']; ?></p></div>
         	<?php endif; ?>
