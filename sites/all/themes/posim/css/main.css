@@ -56,6 +56,7 @@ ul, li { list-style-type:none; margin:0; padding:0; }
 
 #main { clear:both; padding:10px 0 0; }
 .breadcrumb { font-size:0.9em; padding:5 0 15px 0; color:#818181; margin-bottom:10px; }
+.breadcrumb li { color:#fff; }
 .breadcrumb li a { text-decoration:none; font-weight:300; color:#818181;  }
 .breadcrumb a:hover { color:#fff; }
 
@@ -74,7 +75,7 @@ ul, li { list-style-type:none; margin:0; padding:0; }
 #slides { position:absolute; z-index:100; width:700px; color:#fff; }
 .slides_container { width:700px; overflow:hidden; position:relative; display:none; }
 .slides_container div.slide { width:700px; height:467px; display:block; text-align:center; }
-.slide-end-content { text-align:left; }
+.slide-end-content { text-align:left; line-height:1.4em !important; }
 #slides .next,#slides .prev { position:absolute; bottom:-35px; left:0; width:24px; height:9px; display:block; z-index:101; }
 #slides .prev { background:url(../images/arrow-prev.png) no-repeat left center; }
 #slides .next { background:url(../images/arrow-next.png) no-repeat right center; }
