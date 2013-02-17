@@ -44,6 +44,19 @@ function init()
 		};
 	})
 	
+	/* Slideshow caption */	
+	$(".slide").mouseenter(
+	  function(){
+		$('.caption').animate({
+				bottom:0
+			},200);
+	  });
+	$(".slide").mouseleave(
+	  function() {
+		$('.caption').animate({
+				bottom:-35
+			},200);
+	});	
 	
 	/* Lightbox */	
 	$('.lightbox_trigger').click(function(e) {
@@ -52,6 +65,7 @@ function init()
 		if ($('#lightbox').length > 0) { // #lightbox exists
 			$('#lightboxContent').html('<img src="' + image_href + '" />');
 			$('#lightbox').show();
+			$('body').css('overflow','hidden');
 		}
 		else {
 			var lightbox = 
@@ -78,6 +92,8 @@ $(function(){
 	$('#slides').slides({
 		preload: true,
 		preloadImage: Drupal.settings.basePath+'sites/all/themes/posim/images/loading.gif',
+		effect: 'fade',
+		fadeSpeed: 250,
 		play: 0,
 		pause: 2500,
 		hoverPause: true,
@@ -92,9 +108,9 @@ $(function(){
 			};
 		},
 		animationComplete: function(current){
-			$('.caption').animate({
+			/*$('.caption').animate({
 				bottom:0
-			},200);
+			},200);*/
 			if (window.console && console.log) {
 				// example return of current slide number
 				//console.log('animationComplete on slide: ', current);
@@ -103,9 +119,9 @@ $(function(){
 		},
 		slidesLoaded: function() {
 			updatePager( 1, totaleSlide );
-			$('.caption').animate({
+			/*$('.caption').animate({
 				bottom:0
-			},200);
+			},200);*/
 		}
 	});
 });
