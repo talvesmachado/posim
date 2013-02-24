@@ -73,21 +73,21 @@ $backimage = "";
  
   if($is_front)
  {
-	$query = "SELECT field_data_field_images.field_images_fid AS images_fid, RAND() AS random_field
+	$query = "SELECT field_data_field_visuel_hp.field_visuel_hp_fid AS images_fid, RAND() AS random_field
 	FROM 
 	{node} node
-	LEFT JOIN {field_data_field_images} field_data_field_images ON node.nid = field_data_field_images.entity_id AND (field_data_field_images.entity_type = 'node' AND field_data_field_images.deleted = '0')
-	WHERE (( (node.status = '1') AND (node.type IN  ('projet')) ))
+	LEFT JOIN {field_data_field_visuel_hp} field_data_field_visuel_hp ON node.nid = field_data_field_visuel_hp.entity_id AND (field_data_field_visuel_hp.entity_type = 'node' AND field_data_field_visuel_hp.deleted = '0')
+	WHERE (( (node.status = '1') AND (node.type IN  ('visuel_home_page')) ))
 	ORDER BY random_field ASC
 	LIMIT 1 OFFSET 0";
 	$result = db_query($query);
+	$myImg = false;
 	foreach ($result as $row) 
 	{
 		$myImg = file_load($row->images_fid);
 		$myImg = file_create_url($myImg->uri);
-	//	dsm($myImg);
 	};
-	$backimage .= 'style=" background: url('.$myImg.');" ';
+	$backimage .= ($myImg)? 'style=" background: url('.$myImg.');" ' : '';
  };
 ?><!DOCTYPE html>
 <!--[if IEMobile 7]><html class="iem7" <?php print $html_attributes; ?>><![endif]-->

@@ -33,6 +33,14 @@ function conents_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'visuel_home_page' => array(
+      'name' => t('Visuel Home page'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
   );
   return $items;
 }
